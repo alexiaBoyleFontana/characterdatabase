@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="include/header.jsp"/>
 
 <link rel="stylesheet" href="/pub/css/home.css">
@@ -19,7 +20,7 @@
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li><a class="dropdown-item">Search Characters</a></li>
             <li><a class="dropdown-item">Search Worlds</a></li>
-            <li><a class="dropdown-item"">Filter Search</a></li>
+            <li><a class="dropdown-item">Filter Search</a></li>
         </ul>
     </div>
 
@@ -29,24 +30,20 @@
             <th scope="col">#</th>
             <th scope="col">Character</th>
             <th scope="col">World</th>
+            <th scope="col">Race</th>
+            <th scope="col">Title</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Test</td>
-            <td>Test</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Test</td>
-            <td>Test</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Test</td>
-            <td>Test</td>
-        </tr>
+        <c:forEach items="${characters}" var="character">
+            <tr>
+                <th scope="row"> ${character.id}</th>
+                <td>${character.name}</td>
+                <td>${character.worldId}</td>
+                <td>${character.race}</td>
+                <td>${character.title}</td>
+            </tr>
+        </c:forEach>
         </tbody>
     </table>
 

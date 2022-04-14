@@ -20,6 +20,8 @@ public class UserController {
     public ModelAndView register() throws Exception {
         ModelAndView response = new ModelAndView("/login/register");
 
+        int i = 10 / 0;
+
         return response;
     }
 

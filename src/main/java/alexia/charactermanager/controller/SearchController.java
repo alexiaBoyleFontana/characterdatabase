@@ -2,6 +2,7 @@ package alexia.charactermanager.controller;
 
 import alexia.charactermanager.database.dao.CharacterDAO;
 import alexia.charactermanager.database.entity.Character;
+import alexia.charactermanager.service.CharacterService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,7 @@ import java.util.List;
 public class SearchController {
 
     @Autowired
-    CharacterDAO charDao;
+    CharacterService serv;
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public ModelAndView home() throws Exception {
@@ -24,11 +25,7 @@ public class SearchController {
 
         response.setViewName("/search");
 
-        List<Character> characters = charDao.findAll();
-
-        //log.info(characters.get(0).toString());
-
-        response.addObject("characters", characters);
+        response.addObject("characters", serv.allCharacters());
 
         return response;
     }

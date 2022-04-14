@@ -10,7 +10,7 @@
     <h1 id="welcome">Character Database</h1>
 
     <p>
-        Keep track of the many characters in your stories. Create stories, add characters to them, and edit and view them as you please. Please <a href="register.html">create an account</a> or <a href="login.html">login</a> to begin.
+        Keep track of the many characters in your stories. Create stories, add characters to them, and edit and view them as you please. Please <a href="/register">create an account</a> or <a href="/login">login</a> to begin.
     </p>
 
     <div class="dropdown" style="margin: auto;">
@@ -32,6 +32,7 @@
             <th scope="col">World</th>
             <th scope="col">Race</th>
             <th scope="col">Title</th>
+            <th scope="col">Links</th>
         </tr>
         </thead>
         <tbody>
@@ -39,9 +40,15 @@
             <tr>
                 <th scope="row"> ${character.id}</th>
                 <td>${character.name}</td>
-                <td>${character.worldId}</td>
+                <td>${character.world.name}</td>
                 <td>${character.race}</td>
                 <td>${character.title}</td>
+                <td>
+                    <c:forEach items="${character.links}" var="link">
+                        <a href="/char/${link.to.id}"> ${link.to.name}</a>
+                        <c:if test="${not empty link.relation}"> (${link.relation}) </c:if> ;
+                    </c:forEach>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

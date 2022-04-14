@@ -30,7 +30,7 @@ public class HomeController {
         // The following is only for testing
         List<Character> characters = charDao.findAll();
 
-        //log.info(characters.get(0).toString());
+        log.info(characters.get(0).toString());
 
         response.addObject("characters", characters);
         // testing done

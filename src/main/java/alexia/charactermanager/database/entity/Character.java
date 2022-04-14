@@ -3,6 +3,7 @@ package alexia.charactermanager.database.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -31,8 +32,20 @@ public class Character {
     private String imageLink;
 
     //many to one
-    @Column(name = "world_id")
-    private Integer worldId;
+    @ManyToOne
+    private World world;
+
+//    @OneToMany
+//    @JoinTable (name = "char_links", joinColumns = {
+//            @JoinColumn(name = "from_id", referencedColumnName = "id",
+//                    nullable = false, updatable = false)},
+//            inverseJoinColumns = {
+//            @JoinColumn(name = "id", referencedColumnName = "from_id" )
+//    })
+//    private Set<CharLink> links;
+
+    @OneToMany(mappedBy = "from")
+    private Set<CharLink> links;
 
 
 }

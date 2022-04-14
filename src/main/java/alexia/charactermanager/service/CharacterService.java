@@ -21,7 +21,10 @@ public class CharacterService {
     private CharacterDAO charDao;
 
     public List<Character> allCharacters () {
-
         return charDao.findAll();
+    }
+
+    public Character findById(Integer charId) {
+        return charDao.findById(charId);
     }
 }

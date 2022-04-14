@@ -15,4 +15,5 @@
 <div class="container">
 
     <a href="/home">Home</a>
+    &nbsp | &nbsp <a href="/register">Sign Up</a>
     <hr>

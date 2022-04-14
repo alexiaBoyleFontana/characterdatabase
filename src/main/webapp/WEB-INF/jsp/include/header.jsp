@@ -16,4 +16,5 @@
 
     <a href="/home">Home</a>
     &nbsp | &nbsp <a href="/register">Sign Up</a>
+    &nbsp | &nbsp <a href="/search">Characters</a>
     <hr>

@@ -23,21 +23,9 @@ public class CharLink {
     private String relation;
 
     @ManyToOne
-//    @JoinColumns ({
-//        @JoinColumn(name = "from_id", referencedColumnName = "id",
-//                nullable = false, updatable = false)})
-//    @JoinTable (name = "characters", joinColumns = {
-//            @JoinColumn(name = "from_id", referencedColumnName = "id",
-//                    nullable = false, updatable = false)})
     private Character from;
 
     @ManyToOne
-//    @JoinColumns ({
-//                    @JoinColumn(name = "to_id", referencedColumnName = "id",
-//                            nullable = false, updatable = false)})
-//    @JoinTable (name = "characters", inverseJoinColumns = {
-//            @JoinColumn(name = "to_id", referencedColumnName = "id",
-//                    nullable = false, updatable = false)})
     private Character to;
 
 }

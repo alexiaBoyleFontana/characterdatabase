@@ -56,4 +56,8 @@ public class CharacterService {
     public void save (Character character) {
         charDao.save(character);
     }
+
+    public void clearWorld(Character character) {
+        character.setWorld(null);
+    }
 }

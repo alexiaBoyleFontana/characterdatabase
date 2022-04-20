@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="include/header.jsp"/>
+<jsp:include page="../include/header.jsp"/>
 
 <link rel="stylesheet" href="/pub/css/home.css">
 
@@ -39,4 +39,4 @@
 
 </div>
 
-<jsp:include page="include/footer.jsp"/>
+<jsp:include page="../include/footer.jsp"/>

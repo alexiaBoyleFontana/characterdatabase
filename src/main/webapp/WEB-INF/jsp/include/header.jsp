@@ -23,11 +23,11 @@
         &nbsp | &nbsp <a href="/login">Login</a>
     </sec:authorize>
     <sec:authorize access="isAuthenticated()">
-        &nbsp | &nbsp <a href="/search">Characters</a>
+        &nbsp | &nbsp <a href="/search/char">Characters</a>
+        &nbsp | &nbsp <a href="/search/world">Worlds</a>
         &nbsp | &nbsp <a href="/login/logout">Logout</a>
         &nbsp | &nbsp Logged in as <sec:authentication property="principal.username"/>
     </sec:authorize>
     <hr>
-    <img src="/pub/images/castle.png" height="262vh" width="1280vh"">
-    <hr>
+    <img src="/pub/images/castle.png" height="262vh" width="1280vh">
 

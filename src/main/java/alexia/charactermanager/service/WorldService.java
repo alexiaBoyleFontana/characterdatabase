@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Slf4j
 @Component
 @NoArgsConstructor
@@ -54,5 +56,9 @@ public class WorldService {
 
     public World findById(Integer worldId) {
         return worldDao.findById(worldId);
+    }
+
+    public List<World> allWorlds() {
+        return worldDao.findAll();
     }
 }

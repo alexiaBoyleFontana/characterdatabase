@@ -16,8 +16,8 @@
             Search
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="/search"> Search Characters </a> </li>
-            <li><a class="dropdown-item">Search Worlds</a></li>
+            <li><a class="dropdown-item" href="/search/char"> Search Characters </a> </li>
+            <li><a class="dropdown-item" href="/search/world">Search Worlds</a></li>
             <li><a class="dropdown-item">Filter Search</a></li>
         </ul>
     </div>

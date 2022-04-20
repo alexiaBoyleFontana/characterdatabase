@@ -3,6 +3,7 @@ package alexia.charactermanager.database.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -26,4 +27,7 @@ public class World {
 
     @Column(name = "`desc`")
     private String desc;
+
+    @OneToMany(mappedBy = "world")
+    private Set<Character> characters;
 }

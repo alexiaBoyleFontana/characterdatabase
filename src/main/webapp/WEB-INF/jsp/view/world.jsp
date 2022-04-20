@@ -40,7 +40,7 @@
                 <td>Characters</td>
                 <td>
                     <list>
-                        <c:forEach items="${characters}" var="character">
+                        <c:forEach items="${world.characters}" var="character">
                             <li>
                                 <a href="/char/${character.id}"> ${character.name}</a>
                             </li>

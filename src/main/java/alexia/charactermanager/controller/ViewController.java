@@ -31,7 +31,6 @@ public class ViewController {
         Character character = charServ.findById(charId);
 
         if (character == null) {
-            //probably just a 404 tbh but for now
             response.setViewName("redirect:/home");
         } else {
             response.setViewName("/view/char");
@@ -73,7 +72,6 @@ public class ViewController {
         World world = worldServ.findById(worldId);
 
         if (world == null) {
-            //probably just a 404 tbh but for now
             response.setViewName("redirect:/home");
         } else {
             response.setViewName("/view/world");

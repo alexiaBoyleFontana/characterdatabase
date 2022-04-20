@@ -49,13 +49,14 @@ public class CharacterController {
     public ModelAndView submit (CharacterFormBean form) throws Exception {
         ModelAndView response = new ModelAndView();
 
+        //worldServ.test();
 
             //Serv can do the create or edit check
         Character character = serv.submitChar(form);
 
-        //World world = worldServ.submitWorld(form));
+        World world = worldServ.submitWorld(form);
 
-        //character.setWorld(world);
+        character.setWorld(world);
 
         serv.save(character);
 

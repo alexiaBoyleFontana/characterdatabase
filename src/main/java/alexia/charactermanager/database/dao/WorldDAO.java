@@ -8,5 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface WorldDAO extends JpaRepository<World, Long> {
 
+    World findById(@Param("id") Integer id);
+
     World findByName(@Param("name") String name);
 }

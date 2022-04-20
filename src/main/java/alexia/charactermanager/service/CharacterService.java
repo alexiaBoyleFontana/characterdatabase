@@ -22,6 +22,9 @@ public class CharacterService {
     @Autowired
     private CharacterDAO charDao;
 
+    @Autowired
+    private WorldService worldServ;
+
     public Character submitChar(CharacterFormBean form) {
 
         Character character = findById(form.getId());
@@ -29,6 +32,7 @@ public class CharacterService {
         if (character == null) {
             //New character
             character = new Character();
+            character.setWorld(worldServ.findByName(form.getWorld()));
         }
 
         character.setName(form.getName());

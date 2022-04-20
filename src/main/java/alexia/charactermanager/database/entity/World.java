@@ -24,6 +24,6 @@ public class World {
     @Column(name = "medium")
     private String medium;
 
-    @Column(name = "desc")
+    @Column(name = "`desc`")
     private String desc;
 }

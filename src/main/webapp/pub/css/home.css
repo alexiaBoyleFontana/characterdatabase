@@ -5,7 +5,6 @@ div {
 .grid-container{
     display: grid;
     grid-template-columns: auto;
-    height: 100vh;
     gap: 0.5em;
     margin: 0.5em;
 }

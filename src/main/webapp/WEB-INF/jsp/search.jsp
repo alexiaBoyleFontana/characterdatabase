@@ -5,8 +5,6 @@
 
 <div class="grid-container">
 
-    <img src="/pub/images/castle.png" height="350vh" width="1280vh">
-
     <h3 id="welcome">Characters</h3>
 
     <table class="table">

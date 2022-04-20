@@ -15,6 +15,8 @@
 <body>
 
 <div class="container">
+    <img src="/pub/images/castle.png" height="262vh" width="1280vh"">
+
 
     <a href="/home">Home</a>
     <sec:authorize access="isAnonymous()">

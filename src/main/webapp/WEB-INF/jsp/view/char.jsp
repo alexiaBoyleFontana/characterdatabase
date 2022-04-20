@@ -3,39 +3,114 @@
 
 <link rel="stylesheet" href="/pub/css/home.css">
 
-<div class="grid-container">
+<style>
+    #art{
+        max-height:400px;
+        max-width:400px;
+        height:auto;
+        width:auto;
+    }
+</style>
 
-    <img src="/pub/images/castle.png" height="350vh" width="1280vh">
+<div class="grid-container">
 
     <h3 id="welcome">${character.name}</h3>
     <br>
 
+
+    <div>
+        <c:if test="${not empty character.imageLink}">
+            <img id="art" src="${character.imageLink}">
+        </c:if>
+    </div>
+    <div>
     <table class="table">
-        <thead>
-        <tr class="table-dark">
-            <th scope="col">Character</th>
-            <th scope="col">World</th>
-            <th scope="col">Race</th>
-            <th scope="col">Title</th>
-            <th scope="col">Links</th>
-        </tr>
+        <thead class="table-dark">
+            <th scope="col"></th>
+            <th scope="col"></th>
         </thead>
         <tbody>
-        <tr>
-            <td><a href="/char/${character.id}"> ${character.name} </a> </td>
-            <td><a href="/world/${character.world.id}"> ${character.world.name} </a> </td>
-            <td>${character.race}</td>
-            <td>${character.title}</td>
-            <td>
-                <c:forEach items="${character.links}" var="link">
-                    <a href="/char/${link.to.id}"> ${link.to.name}</a>
-                    <c:if test="${not empty link.relation}"> (${link.relation}) </c:if> ;
-                </c:forEach>
-            </td>
-        </tr>
+            <tr>
+                <td>Name</td>
+                <td>${character.name}</td>
+            </tr>
+            <tr>
+                <td>World</td>
+                <td><a href="/world/${character.world.id}"> ${character.world.name} </a> </td>
+            </tr>
+            <tr>
+                <td>Race</td>
+                <td>${character.race}</td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td>${character.title}</td>
+            </tr>
+            <tr>
+                <td>Affiliations</td>
+                <td>
+                    <list>
+                        <c:forEach items="${character.links}" var="link">
+                            <li>
+                                <a href="/char/${link.to.id}"> ${link.to.name}</a>
+                                <c:if test="${not empty link.relation}"> (${link.relation}) </c:if>
+                            </li>
+                        </c:forEach>
+                    </list>
+                </td>
+            </tr>
         </tbody>
     </table>
+    </div>
+
+    <div class="button">
+        <button class="btn btn-dark" type="button" id="edit">
+            Edit
+        </button>
+    </div>
+    <div>
+    <form action="/char/submit" method="post" id="editForm" hidden>
+        <input type="hidden" name="id" value="${character.id}">
+        <table class="table">
+            <thead class="table-dark">
+            <th scope="col"></th>
+            <th scope="col"></th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Image Link</td>
+                <td><input type="text" name="img" id="imgId" value="${character.imageLink}"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" id="nameId" value="${character.name}"></td>
+            </tr>
+            <tr>
+                <td>World</td>
+                <td><input type="text" name="world" id="worldId" value="${character.world.name}"></td>
+            </tr>
+            <tr>
+                <td>Race</td>
+                <td><input type="text" name="race" id="raceId" value="${character.race}"></td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td><input type="text" name="title" id="titleId" value="${character.title}"></td>
+            </tr>
+            <tr>
+                <td>Affiliations</td>
+                <td>
+                    <input type="text" name="affiliation">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    </div>
 
 </div>
+
+<script src="/pub/js/char.js">
+</script>
 
 <jsp:include page="../include/footer.jsp"/>

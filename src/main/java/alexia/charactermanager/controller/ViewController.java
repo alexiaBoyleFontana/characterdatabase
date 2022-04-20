@@ -3,6 +3,7 @@ package alexia.charactermanager.controller;
 import alexia.charactermanager.database.entity.Character;
 import alexia.charactermanager.database.entity.World;
 import alexia.charactermanager.formbean.CharacterFormBean;
+import alexia.charactermanager.formbean.WorldFormBean;
 import alexia.charactermanager.service.CharacterService;
 import alexia.charactermanager.service.WorldService;
 import lombok.extern.slf4j.Slf4j;
@@ -79,6 +80,23 @@ public class ViewController {
         }
 
         return response;
+    }
+
+    @RequestMapping(value="/world/submit", method = RequestMethod.POST)
+    public ModelAndView worldSubmit (WorldFormBean form) throws Exception {
+        ModelAndView response = new ModelAndView();
+
+        //Serv can do the create or edit check
+        World world = worldServ.submitWorld(form);
+
+        worldServ.save(world);
+
+        log.info(form.toString());
+
+        response.setViewName("redirect:/world/" + world.getId());
+
+        return response;
+
     }
 
 

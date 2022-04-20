@@ -72,11 +72,11 @@
                 </tr>
                 <tr>
                     <td>Medium</td>
-                    <td><input type="text" name="world" id="worldId" value="${world.medium}"></td>
+                    <td><input type="text" name="medium" id="mediumId" value="${world.medium}"></td>
                 </tr>
                 <tr>
                     <td>Description</td>
-                    <td><input type="text" name="race" id="raceId" value="${world.desc}"></td>
+                    <td><input type="text" name="description" id="descriptionId" value="${world.desc}"></td>
                 </tr>
                 </tbody>
             </table>

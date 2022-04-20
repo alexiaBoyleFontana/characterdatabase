@@ -5,6 +5,7 @@ import alexia.charactermanager.database.dao.WorldDAO;
 import alexia.charactermanager.database.entity.Character;
 import alexia.charactermanager.database.entity.World;
 import alexia.charactermanager.formbean.CharacterFormBean;
+import alexia.charactermanager.formbean.WorldFormBean;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,21 @@ public class WorldService {
             world.setName(form.getWorld());
             save(world);
         }
+
+        return world;
+    }
+
+    public World submitWorld(WorldFormBean form) {
+
+        World world = findById(form.getId());
+
+        if (world == null) {
+            world = new World();
+        }
+
+        world.setName(form.getName());
+        world.setDesc(form.getDescription());
+        world.setMedium(form.getMedium());
 
         return world;
     }

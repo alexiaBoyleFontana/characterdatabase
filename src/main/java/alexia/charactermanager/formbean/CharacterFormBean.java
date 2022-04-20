@@ -22,6 +22,7 @@ public class CharacterFormBean {
 
     private String title;
 
+    //@Unique(message = "World already exists.")
     //worldname
     private String world;
 }

@@ -35,7 +35,11 @@ public class CharacterService {
             character.setWorld(worldServ.findByName(form.getWorld()));
         }
 
-        character.setName(form.getName());
+        if (form.getName().isBlank()) {
+            character.setName("Unnamed");
+        } else {
+            character.setName(form.getName());
+        }
         character.setTitle(form.getTitle());
         character.setImageLink(form.getImg());
         character.setRace(form.getRace());

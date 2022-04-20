@@ -110,7 +110,7 @@
 
 </div>
 
-<script src="/pub/js/char.js">
+<script src="/pub/js/view.js">
 </script>
 
 <jsp:include page="../include/footer.jsp"/>

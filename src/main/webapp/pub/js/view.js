@@ -1,4 +1,4 @@
-//Event Functions for view/char
+//Event Functions for view
 
 function revealForm (e) {
     let form = document.getElementById('editForm');
@@ -12,7 +12,7 @@ function revealForm (e) {
 
 }
 
-//Event Register for view/char
+//Event Register for view
 
 let button = document.getElementById('edit');
 button.addEventListener('click', revealForm);

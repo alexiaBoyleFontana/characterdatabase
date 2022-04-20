@@ -57,7 +57,35 @@
             Edit
         </button>
     </div>
+    <div>
+        <form action="/world/submit" method="post" id="editForm" hidden>
+            <input type="hidden" name="id" value="${world.id}">
+            <table class="table">
+                <thead class="table-dark">
+                <th scope="col"></th>
+                <th scope="col"></th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>World</td>
+                    <td><input type="text" name="name" id="nameId" value="${world.name}"></td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td><input type="text" name="world" id="worldId" value="${world.medium}"></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td><input type="text" name="race" id="raceId" value="${world.desc}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
 
 </div>
+
+<script src="/pub/js/view.js">
+</script>
 
 <jsp:include page="../include/footer.jsp"/>

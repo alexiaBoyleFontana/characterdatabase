@@ -99,5 +99,12 @@ public class ViewController {
 
     }
 
+    @RequestMapping(value="/create", method = RequestMethod.GET)
+    public ModelAndView createNew () throws Exception {
+        ModelAndView response = new ModelAndView("/view/create");
+
+        return response;
+    }
+
 
 }

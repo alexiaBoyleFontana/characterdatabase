@@ -15,7 +15,6 @@
 <div class="grid-container">
 
     <h3 id="welcome">${character.name}</h3>
-    <br>
 
 
     <div>
@@ -106,6 +105,11 @@
             </tbody>
         </table>
     </form>
+    </div>
+    <div class="button">
+        <button class="btn btn-danger" type="button" id="delete" hidden>
+            Delete Character
+        </button>
     </div>
 
 </div>

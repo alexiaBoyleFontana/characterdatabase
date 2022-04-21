@@ -2,6 +2,7 @@
 <jsp:include page="../include/header.jsp"/>
 
 <link rel="stylesheet" href="/pub/css/home.css">
+<c:set var="count" value="0" scope="page" />
 
 <div class="grid-container">
 
@@ -21,7 +22,8 @@
         <tbody>
         <c:forEach items="${characters}" var="character">
             <tr>
-                <th scope="row"> ${character.id}</th>
+                <c:set var="count" value="${count + 1}" scope="page"/>
+                <th scope="row"> ${count}</th>
                 <td><a href="/char/${character.id}"> ${character.name} </a> </td>
                 <td><a href="/world/${character.world.id}"> ${character.world.name} </a> </td>
                 <td>${character.race}</td>
@@ -36,6 +38,11 @@
         </c:forEach>
         </tbody>
     </table>
+    <div class="button">
+        <a href="/create" class="btn btn-dark" role="button">
+            Create
+        </a>
+    </div>
 
 </div>
 

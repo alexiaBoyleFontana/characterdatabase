@@ -2,6 +2,7 @@
 <jsp:include page="../include/header.jsp"/>
 
 <link rel="stylesheet" href="/pub/css/home.css">
+<c:set var="count" value="0" scope="page" />
 
 <div class="grid-container">
 
@@ -19,7 +20,8 @@
         <tbody>
         <c:forEach items="${worlds}" var="world">
             <tr>
-                <th scope="row"> ${world.id}</th>
+                <c:set var="count" value="${count + 1}" scope="page"/>
+                <th scope="row"> ${count}</th>
                 <td><a href="/world/${world.id}"> ${world.name} </a> </td>
                 <td>${world.medium}</td>
                 <td>${world.desc}</td>

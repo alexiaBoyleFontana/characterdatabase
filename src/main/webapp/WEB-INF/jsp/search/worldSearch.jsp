@@ -29,6 +29,11 @@
         </c:forEach>
         </tbody>
     </table>
+    <div class="button">
+        <a href="/create" class="btn btn-dark" role="button">
+            Create
+        </a>
+    </div>
 
 </div>
 

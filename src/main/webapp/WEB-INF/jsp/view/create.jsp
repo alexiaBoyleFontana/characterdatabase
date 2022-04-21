@@ -18,7 +18,7 @@
     </div>
 
     <div>
-        <form action="/char/submit" method="post" id="editForm">
+        <form action="/char/submit" method="post" id="characterForm" hidden>
             <input type="hidden" name="id" value="">
             <table class="table">
                 <thead class="table-dark">
@@ -32,7 +32,7 @@
                 </tr>
                 <tr>
                     <td>Name</td>
-                    <td><input type="text" name="name" id="nameId"></td>
+                    <td><input type="text" name="name" id="cNameId"></td>
                 </tr>
                 <tr>
                     <td>World</td>
@@ -57,14 +57,44 @@
         </form>
     </div>
     <div class="button">
-        <button class="btn btn-dark" type="button" id="edit">
+        <button class="btn btn-dark" type="button" id="characterButton" hidden>
             Create
+        </button>
+    </div>
+    <div>
+        <form action="/world/submit" method="post" id="worldForm" hidden>
+            <input type="hidden" name="id" value="${world.id}">
+            <table class="table">
+                <thead class="table-dark">
+                <th scope="col"></th>
+                <th scope="col"></th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>World</td>
+                    <td><input type="text" name="name" id="wNameId"></td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td><input type="text" name="medium" id="mediumId"></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td><input type="text" name="description" id="descriptionId"></td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="button">
+        <button class="btn btn-dark" type="button" id="worldButton" hidden>
+           Create
         </button>
     </div>
 
 </div>
 
-<script src="/pub/js/view.js">
+<script src="/pub/js/create.js">
 </script>
 
 <jsp:include page="../include/footer.jsp"/>

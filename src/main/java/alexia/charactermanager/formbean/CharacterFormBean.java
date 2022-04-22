@@ -1,11 +1,10 @@
 package alexia.charactermanager.formbean;
 
-import alexia.charactermanager.database.entity.World;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,4 +24,7 @@ public class CharacterFormBean {
     //@Unique(message = "World already exists.")
     //worldname
     private String world;
+
+    //@exists?
+    private List<String> link;
 }

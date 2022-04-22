@@ -72,7 +72,7 @@
         <input type="hidden" name="id" value="${character.id}">
         <table class="table">
             <thead class="table-dark">
-            <th scope="col"></th>
+            <th scope="col">Details</th>
             <th scope="col"></th>
             </thead>
             <tbody>
@@ -96,16 +96,45 @@
                 <td>Title</td>
                 <td><input type="text" name="title" id="titleId" value="${character.title}"></td>
             </tr>
-            <tr>
-                <td>Affiliations</td>
-                <td>
-                    <input type="text" name="affiliation">
-                </td>
-            </tr>
             </tbody>
         </table>
+        <div>
+            <table class="table">
+                <thead class="table-dark">
+                <th scope="col">Affiliations</th>
+                <th scope="col">
+                    <div style="align-items: end">
+                    <button class="btn btn-dark" type="button" id="addAffil" style="align-self: end">
+                        <b>+</b>
+                    </button>
+                </div>
+                </th>
+                </thead>
+                <tbody id="affilBody">
+
+                    <c:forEach items="${character.links}" var="link">
+                    <tr>
+                        <td>
+                            Name &nbsp <input type="text" name="link" value="${link.to.name}">
+                        &nbsp Relationship <input type="text" name="relationship" value="<c:if test="${not empty link.relation}">${link.relation}</c:if>">
+                        </td>
+                    </tr>
+                    </c:forEach>
+
+                <tr>
+                    <td>
+                        Name &nbsp <input type="text" name="link">
+                        &nbsp Relationship <input type="text" name="relationship">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
     </form>
+
     </div>
+
     <div class="button">
         <button class="btn btn-danger" type="button" id="delete" hidden>
             Delete Character

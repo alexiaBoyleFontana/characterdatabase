@@ -26,5 +26,7 @@ public class CharacterFormBean {
     private String world;
 
     //@exists?
-    private List<String> link;
+    private List<String> links;
+
+    private List<String> relationships;
 }

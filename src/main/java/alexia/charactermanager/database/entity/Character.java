@@ -3,6 +3,7 @@ package alexia.charactermanager.database.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -45,7 +46,7 @@ public class Character {
 //    private Set<CharLink> links;
 
     @OneToMany(mappedBy = "from")
-    private Set<CharLink> links;
+    private List<CharLink> links;
 
 
 }

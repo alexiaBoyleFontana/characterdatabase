@@ -1,7 +1,9 @@
 package alexia.charactermanager.service;
 
+import alexia.charactermanager.database.dao.CharLinkDAO;
 import alexia.charactermanager.database.dao.CharacterDAO;
 import alexia.charactermanager.database.dao.UserDAO;
+import alexia.charactermanager.database.entity.CharLink;
 import alexia.charactermanager.database.entity.Character;
 import alexia.charactermanager.database.entity.User;
 import alexia.charactermanager.formbean.CharacterFormBean;
@@ -25,6 +27,9 @@ public class CharacterService {
     @Autowired
     private WorldService worldServ;
 
+    @Autowired
+    private CharLinkDAO charLinkDao;
+
     public Character submitChar(CharacterFormBean form) {
 
         Character character = findById(form.getId());
@@ -43,6 +48,52 @@ public class CharacterService {
         character.setTitle(form.getTitle());
         character.setImageLink(form.getImg());
         character.setRace(form.getRace());
+
+        //Add Affiliations
+        List<String> names = form.getLinks();
+        List<String> relations = form.getRelationships();
+
+        Integer currentNum = character.getLinks().size();
+
+        for (int i = 0; i < names.size(); i++) {
+            //If not blank - create link
+
+
+                Character toAdd = charDao.findByName(names.get(i));
+
+                if (toAdd != null) {
+
+                    CharLink link;
+
+                    // If currently in bounds - edit existing
+                    if (i < currentNum) {
+                        link = character.getLinks().get(i);
+                    }
+                    else {
+                        //If not - create new link
+                        link = new CharLink();
+                    }
+
+                    link.setFrom(character);
+                    link.setTo(charDao.findByName(names.get(i)));
+
+                    //If a relation name was input, add it
+                    if (!(relations.get(i).isBlank())) {
+                        link.setRelation(relations.get(i));
+                    }
+
+                    charLinkDao.save(link);
+
+                    character.getLinks().add(link);
+
+                } else if (i < currentNum) {
+                    CharLink link = character.getLinks().get(i);
+
+                    charLinkDao.delete(link);
+                    character.getLinks().remove(link);
+                }
+            }
+
 
         save(character);
 

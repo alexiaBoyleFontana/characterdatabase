@@ -115,16 +115,16 @@
                     <c:forEach items="${character.links}" var="link">
                     <tr>
                         <td>
-                            Name &nbsp <input type="text" name="link" value="${link.to.name}">
-                        &nbsp Relationship <input type="text" name="relationship" value="<c:if test="${not empty link.relation}">${link.relation}</c:if>">
+                            Name &nbsp <input type="text" name="links" value="${link.to.name}">
+                        &nbsp Relationship <input type="text" name="relationships" value="<c:if test="${not empty link.relation}">${link.relation}</c:if>">
                         </td>
                     </tr>
                     </c:forEach>
 
                 <tr>
                     <td>
-                        Name &nbsp <input type="text" name="link">
-                        &nbsp Relationship <input type="text" name="relationship">
+                        Name &nbsp <input type="text" name="links">
+                        &nbsp Relationship <input type="text" name="relationships">
                     </td>
                 </tr>
                 </tbody>
@@ -136,10 +136,16 @@
     </div>
 
     <div class="button">
-        <button class="btn btn-danger" type="button" id="delete" hidden>
-            Delete Character
-        </button>
+        <a class="btn btn-danger" id="delete" hidden href="char/delete">
+                Delete Character
+        </a>
     </div>
+
+    <div id="formCheck" hidden>
+        <input type="checkbox" id="confirmCheck">
+        <label for="confirmCheck"> Confirm </label><br>
+    </div>
+
 
 </div>
 

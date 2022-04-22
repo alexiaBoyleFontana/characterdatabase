@@ -62,6 +62,14 @@ public class WorldService {
         return world;
     }
 
+    public void delete (Integer worldId) {
+        World world = worldDao.findById(worldId);
+
+        if (world != null) {
+            worldDao.delete(world);
+        }
+    }
+
     public World findByName(String world) {
         return worldDao.findByName(world);
     }

@@ -38,25 +38,19 @@ public class CharacterService {
             //New character
             character = new Character();
             character.setWorld(worldServ.findByName(form.getWorld()));
-        }
-
-        if (form.getName().isBlank()) {
-            character.setName("Unnamed");
         } else {
-            character.setName(form.getName());
-        }
-        character.setTitle(form.getTitle());
-        character.setImageLink(form.getImg());
-        character.setRace(form.getRace());
+            //Add Affiliations
+            List<String> names = form.getLinks();
+            List<String> relations = form.getRelationships();
 
-        //Add Affiliations
-        List<String> names = form.getLinks();
-        List<String> relations = form.getRelationships();
+            Integer currentNum = 0;
 
-        Integer currentNum = character.getLinks().size();
+            if (character.getLinks() != null ) {
+                currentNum = character.getLinks().size();
+            }
 
-        for (int i = 0; i < names.size(); i++) {
-            //If not blank - create link
+            for (int i = 0; i < names.size(); i++) {
+                //If not blank - create link
 
 
                 Character toAdd = charDao.findByName(names.get(i));
@@ -93,11 +87,29 @@ public class CharacterService {
                     character.getLinks().remove(link);
                 }
             }
+        }
+
+        if (form.getName().isBlank()) {
+            character.setName("Unnamed");
+        } else {
+            character.setName(form.getName());
+        }
+        character.setTitle(form.getTitle());
+        character.setImageLink(form.getImg());
+        character.setRace(form.getRace());
 
 
         save(character);
 
         return character;
+    }
+
+    public void delete (Integer charId) {
+        Character character = charDao.findById(charId);
+
+        if (character != null) {
+            charDao.delete(character);
+        }
     }
 
     public List<Character> allCharacters () {

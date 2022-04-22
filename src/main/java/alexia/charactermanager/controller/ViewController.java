@@ -41,6 +41,17 @@ public class ViewController {
         return response;
     }
 
+    @GetMapping("/char/delete/{characterId}")
+    public ModelAndView deleteChar (@PathVariable("characterId") Integer charId) throws Exception {
+        ModelAndView response = new ModelAndView();
+
+        charServ.delete(charId);
+
+        response.setViewName("redirect:/search/char");
+
+        return response;
+    }
+
     @RequestMapping(value="/char/submit", method = RequestMethod.POST)
     public ModelAndView characterSubmit (CharacterFormBean form) throws Exception {
         ModelAndView response = new ModelAndView();
@@ -97,6 +108,17 @@ public class ViewController {
 
         return response;
 
+    }
+
+    @GetMapping("/world/delete/{worldId}")
+    public ModelAndView deleteWorld (@PathVariable("worldId") Integer worldId) throws Exception {
+        ModelAndView response = new ModelAndView();
+
+        worldServ.delete(worldId);
+
+        response.setViewName("redirect:/search/world");
+
+        return response;
     }
 
     @RequestMapping(value="/create", method = RequestMethod.GET)

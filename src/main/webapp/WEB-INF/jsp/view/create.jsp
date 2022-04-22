@@ -46,12 +46,6 @@
                     <td>Title</td>
                     <td><input type="text" name="title" id="titleId"></td>
                 </tr>
-                <tr>
-                    <td>Affiliations</td>
-                    <td>
-                        <input type="text" name="affiliation">
-                    </td>
-                </tr>
                 </tbody>
             </table>
         </form>

@@ -136,7 +136,7 @@
     </div>
 
     <div class="button">
-        <a class="btn btn-danger" id="delete" hidden href="char/delete">
+        <a class="btn btn-danger" id="delete" hidden href="/char/delete/${character.id}">
                 Delete Character
         </a>
     </div>

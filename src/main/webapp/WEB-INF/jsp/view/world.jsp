@@ -82,9 +82,14 @@
         </form>
     </div>
     <div class="button">
-        <button class="btn btn-danger" type="button" id="delete" hidden>
-            Delete Character
-        </button>
+        <a class="btn btn-danger" id="delete" hidden href="/world/delete/${world.id}">
+            Delete World
+        </a>
+    </div>
+
+    <div id="formCheck" hidden>
+        <input type="checkbox" id="confirmCheck">
+        <label for="confirmCheck"> Confirm </label><br>
     </div>
 
 </div>

@@ -6,10 +6,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface CharacterDAO extends JpaRepository<Character, Long> {
 
     Character findById(@Param("id") Integer id);
 
     Character findByName(@Param("name") String name);
+
+    List<Character> findByNameIgnoreCaseContaining(@Param("name") String name);
 }

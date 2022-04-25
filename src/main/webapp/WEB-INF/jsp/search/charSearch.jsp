@@ -8,6 +8,13 @@
 
     <h3 id="welcome">Characters</h3>
 
+    <div>
+    <form action="/search/char" method="get">
+        <input type="text" name="search" id="searchId" value="${searchValue}">
+        <button type="submit" class="btn btn-dark">Search</button>
+    </form>
+    </div>
+
     <table class="table">
         <thead>
         <tr class="table-dark">

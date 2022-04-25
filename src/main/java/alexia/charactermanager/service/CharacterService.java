@@ -127,4 +127,8 @@ public class CharacterService {
     public void clearWorld(Character character) {
         character.setWorld(null);
     }
+
+    public List<Character> containsName(String name) {
+        return charDao.findByNameIgnoreCaseContaining(name);
+    }
 }

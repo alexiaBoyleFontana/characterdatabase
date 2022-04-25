@@ -18,7 +18,4 @@ public class RegisterFormBean {
 
     @NotBlank(message="Missing password.")
     private String password;
-
-    @NotBlank(message="Missing password confirmation.")
-    private String confirmPassword;
 }

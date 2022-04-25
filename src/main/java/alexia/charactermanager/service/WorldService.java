@@ -85,4 +85,8 @@ public class WorldService {
     public List<World> allWorlds() {
         return worldDao.findAll();
     }
+
+    public List<World> containsName(String name) {
+        return worldDao.findByNameIgnoreCaseContaining(name);
+    }
 }

@@ -36,7 +36,7 @@ public class UserController {
             log.info("User (" + form.getUsername() + ") created successfully");
         }
 
-        response.setViewName("redirect:/home");
+        response.setViewName("redirect:/login");
 
         return response;
     }

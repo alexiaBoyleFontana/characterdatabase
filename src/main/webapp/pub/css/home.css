@@ -1,3 +1,7 @@
+body {
+    background-color: #F5FAFF;
+}
+
 div {
     margin: auto;
 }
@@ -6,7 +10,7 @@ div {
     display: grid;
     grid-template-columns: auto;
     gap: 0.5em;
-    margin: 0.5em;
+    margin-top: 0.5em;
 }
 
 #welcome {
@@ -18,11 +22,17 @@ div {
 }
 
 p {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: slateblue;
 }
 
 a:hover {
-    color: green;
+    color: darkblue;
+    text-decoration: underline;
 
 }
 

@@ -3,15 +3,31 @@
 
 <div class="grid-container">
 
-    <h2> Register </h2>
+    <h2 id="welcome"> Register </h2>
 
-    <form action="/registerSubmit" method="post">
-        Username <input type="text" name="username" id="usernameId"> <br>
-        Password <input type="text" name="password" id="passId"> <br>
-        Confirm Password <input type="text" name="confirmPassword" id="cPassId"> <br>
-
-        <button id="submit"> Register </button>
+    <div>
+    <form action="/registerSubmit" method="post" style="text-align: center">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td style="text-align: right;">Username</td>
+                <td><input type="text" name="username" id="usernameId"></td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">Password</td>
+                <td><input type="text" name="password" id="passId"></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">Confirm Password</td>
+                <td><input type="text" name="confirmPassword" id="cPassId"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="button">
+            <button id="submit" class="btn btn-dark"> Register </button>
+        </div>
     </form>
+    </div>
 
 
 

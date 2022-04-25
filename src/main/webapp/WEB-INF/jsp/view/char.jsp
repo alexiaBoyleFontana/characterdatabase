@@ -7,6 +7,7 @@
     #art{
         max-height:400px;
         max-width:400px;
+
         height:auto;
         width:auto;
     }
@@ -143,7 +144,7 @@
 
     <div id="formCheck" hidden>
         <input type="checkbox" id="confirmCheck">
-        <label for="confirmCheck"> Confirm </label><br>
+        <label for="confirmCheck"> Confirm Delete </label><br>
     </div>
 
 

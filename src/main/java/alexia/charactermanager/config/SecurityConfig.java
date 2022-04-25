@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //anyone can access these
                 .antMatchers("/pub/**", "/error/**", "/login/**", "/home", "/user/**").permitAll()
                 //need to be authenticated
-                .antMatchers("/admin/**", "/view/**", "/search").authenticated()
+                .antMatchers("/admin/**", "/view/**", "/search/**", "/char/**", "/world/**").authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")

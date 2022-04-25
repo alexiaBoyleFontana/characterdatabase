@@ -4,12 +4,17 @@ function revealForm (e) {
     let form = document.getElementById('editForm');
     let delt = document.getElementById('delete');
     let check = document.getElementById('formCheck');
+    let button = document.getElementById('edit')
+
+
     if (form.hidden) {
         form.hidden = false;
+        button.innerHTML = "Confirm Edit";
         if (delt != null) {
             delt.hidden = false;
         }
         check.hidden = false;
+
     } else {
         form.hidden = true;
         if (delt != null) {

@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
+    <link rel="stylesheet" href="/pub/css/home.css">
+
 </head>
 
 <body>
@@ -29,5 +31,5 @@
         &nbsp | &nbsp Logged in as <sec:authentication property="principal.username"/>
     </sec:authorize>
     <hr>
-    <img src="/pub/images/castle.png" height="262vh" width="1280vh">
+    <img src="/pub/images/castle.png" height="262vh" width="1295vh">
 

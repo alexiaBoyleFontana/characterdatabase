@@ -15,11 +15,11 @@
             </tr>
             <tr>
                 <td style="text-align: right;">Password</td>
-                <td><input type="text" name="password" id="passId"></td>
+                <td><input type="password" name="password" id="passId"></td>
             </tr>
             <tr>
                 <td style="text-align: left;">Confirm Password</td>
-                <td><input type="text" name="confirmPassword" id="cPassId"></td>
+                <td><input type="password" name="confirmPassword" id="cPassId"></td>
             </tr>
             </tbody>
         </table>

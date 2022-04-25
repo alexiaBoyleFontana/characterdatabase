@@ -23,15 +23,6 @@ public class WorldService {
     @Autowired
     private WorldDAO worldDao;
 
-//    public void test() {
-//        World world = new World();
-//        world.setName("test");
-//        world.setDesc("test");
-//        world.setMedium("test");
-//
-//        save(world);
-//    }
-
     public World submitWorld(CharacterFormBean form) {
 
         World world = findByName(form.getWorld());

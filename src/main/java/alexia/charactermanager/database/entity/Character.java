@@ -36,15 +36,6 @@ public class Character {
     @ManyToOne
     private World world;
 
-//    @OneToMany
-//    @JoinTable (name = "char_links", joinColumns = {
-//            @JoinColumn(name = "from_id", referencedColumnName = "id",
-//                    nullable = false, updatable = false)},
-//            inverseJoinColumns = {
-//            @JoinColumn(name = "id", referencedColumnName = "from_id" )
-//    })
-//    private Set<CharLink> links;
-
     @OneToMany(mappedBy = "from")
     private List<CharLink> links;
 

@@ -6,7 +6,7 @@ The management system is built using Spring Boot, with Spring Security, Spring D
 
 # Database
 
-[ER Diagram](docs/ER.png)
+![ER Diagram](docs/ER.png)
 
 # License
 

@@ -13,6 +13,7 @@ public class RegisterFormBean {
 
     private Integer id;
 
+    //@Unique(message="Username already exists.")
     @NotBlank(message="Missing username.")
     private String username;
 

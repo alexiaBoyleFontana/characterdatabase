@@ -9,11 +9,16 @@ import alexia.charactermanager.service.WorldService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.naming.Binding;
+import javax.validation.Valid;
 
 @Slf4j
 @Controller
@@ -53,10 +58,27 @@ public class ViewController {
     }
 
     @RequestMapping(value="/char/submit", method = RequestMethod.POST)
-    public ModelAndView characterSubmit (CharacterFormBean form) throws Exception {
+    public ModelAndView characterSubmit (@Valid CharacterFormBean form, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
 
         form.clean();
+
+        if (bindingResult.hasErrors()) {
+            for (ObjectError error : bindingResult.getAllErrors() ) {
+
+                log.info(error.getDefaultMessage());
+            }
+
+            if (form.getId() != null) {
+                response.setViewName("redirect:/char/" + form.getId());
+            }
+            else {
+                response.setViewName("redirect:/create");
+            }
+
+            return response;
+        }
+
             //Serv can do the create or edit check
         Character character = charServ.submitChar(form);
 
@@ -95,10 +117,27 @@ public class ViewController {
     }
 
     @RequestMapping(value="/world/submit", method = RequestMethod.POST)
-    public ModelAndView worldSubmit (WorldFormBean form) throws Exception {
+    public ModelAndView worldSubmit (@Valid WorldFormBean form, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
 
         form.clean();
+
+        if (bindingResult.hasErrors()) {
+            for (ObjectError error : bindingResult.getAllErrors() ) {
+
+                log.info(error.getDefaultMessage());
+            }
+
+            if (form.getId() != null) {
+                response.setViewName("redirect:/char/" + form.getId());
+            }
+            else {
+                response.setViewName("redirect:/create");
+            }
+
+            return response;
+        }
+
         //Serv can do the create or edit check
         World world = worldServ.submitWorld(form);
 

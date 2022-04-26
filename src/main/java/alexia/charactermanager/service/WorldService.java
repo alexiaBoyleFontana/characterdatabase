@@ -26,10 +26,8 @@ public class WorldService {
     public World submitWorld(CharacterFormBean form) {
 
         World world = findByName(form.getWorld());
-        //log.info(world.toString());
 
         if (world == null) {
-            //New character
             world = new World();
             if (form.getName().isBlank()) {
                 world.setName("Unnamed");

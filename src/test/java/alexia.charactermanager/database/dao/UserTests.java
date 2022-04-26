@@ -30,9 +30,6 @@ public class UserTests {
         User actual = userDao.findById(1);
 
         Assertions.assertEquals(expected.getId(), actual.getId());
-
-        //Force fail
-        //Assertions.assertEquals(expected.getId(), 3);
     }
 
     @Test
@@ -49,8 +46,6 @@ public class UserTests {
 
     @Test
     public void updateTest() {
-        //User expected = new User();
-        //expected.setFirstName("updated");
 
         User actual = userDao.findById(1);
         actual.setUsername("updated");
@@ -67,7 +62,6 @@ public class UserTests {
         List<UserRole> roles = userRoleDao.findByUserId(1);
 
         //Need to delete all user_roles before deleting user, because of foreign key
-        //Think of this like manually cascading?
         for (UserRole role : roles) {
             userRoleDao.delete(role);
         }

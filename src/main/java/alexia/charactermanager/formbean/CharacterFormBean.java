@@ -1,5 +1,7 @@
 package alexia.charactermanager.formbean;
 
+import alexia.charactermanager.validation.CharacterUnique;
+import alexia.charactermanager.validation.WorldUnique;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -15,17 +17,16 @@ public class CharacterFormBean implements FormBean{
 
     private String img;
 
+    @CharacterUnique
     private String name;
 
     private String race;
 
     private String title;
 
-    //@Unique(message = "World already exists.")
-    //worldname
+    @WorldUnique
     private String world;
 
-    //@exists?
     private List<String> links;
 
     private List<String> relationships;

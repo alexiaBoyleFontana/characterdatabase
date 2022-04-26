@@ -131,4 +131,8 @@ public class CharacterService {
     public List<Character> containsName(String name) {
         return charDao.findByNameIgnoreCaseContaining(name);
     }
+
+    public Character findByName(String value) {
+        return charDao.findByName(value);
+    }
 }

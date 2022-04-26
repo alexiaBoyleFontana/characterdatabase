@@ -1,5 +1,6 @@
 package alexia.charactermanager.formbean;
 
+import alexia.charactermanager.validation.UserUnique;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,7 +14,7 @@ public class RegisterFormBean {
 
     private Integer id;
 
-    //@Unique(message="Username already exists.")
+    @UserUnique(message="Username already exists.")
     @NotBlank(message="Missing username.")
     private String username;
 

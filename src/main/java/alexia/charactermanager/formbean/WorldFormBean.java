@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 @ToString
-public class WorldFormBean {
+public class WorldFormBean implements FormBean {
 
     private Integer id;
 
@@ -20,4 +20,10 @@ public class WorldFormBean {
     private String medium;
 
     private String description;
+
+    public void clean() {
+        name = sanitize(name);
+        medium = sanitize(medium);
+        description = sanitize(description);
+    }
 }

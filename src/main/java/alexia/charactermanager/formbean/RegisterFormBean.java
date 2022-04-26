@@ -10,14 +10,21 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 @ToString
-public class RegisterFormBean {
+public class RegisterFormBean implements FormBean {
 
     private Integer id;
 
-    @UserUnique(message="Username already exists.")
+    @UserUnique
     @NotBlank(message="Missing username.")
     private String username;
 
     @NotBlank(message="Missing password.")
     private String password;
+
+    @Override
+    public void clean() {
+        System.out.println(username);
+        username = sanitize(username);
+        password = sanitize(password);
+    }
 }

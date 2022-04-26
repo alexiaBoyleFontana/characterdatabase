@@ -3,6 +3,7 @@ package alexia.charactermanager.controller;
 import alexia.charactermanager.database.entity.Character;
 import alexia.charactermanager.database.entity.World;
 import alexia.charactermanager.service.CharacterService;
+import alexia.charactermanager.service.CleanerService;
 import alexia.charactermanager.service.WorldService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -25,6 +26,9 @@ public class SearchController {
     @Autowired
     WorldService worldServ;
 
+    @Autowired
+    CleanerService cleaner;
+
     @RequestMapping(value = "/search/char", method = RequestMethod.GET)
     public ModelAndView characterSearch(@RequestParam(name = "search", required = false, defaultValue = "") String search) throws Exception {
         ModelAndView response = new ModelAndView();
@@ -39,7 +43,7 @@ public class SearchController {
             response.addObject("characters", charServ.allCharacters());
         }
 
-        response.addObject("searchValue", search);
+        response.addObject("searchValue", cleaner.clean(search));
 
         return response;
     }
@@ -58,7 +62,7 @@ public class SearchController {
             response.addObject("worlds", worldServ.allWorlds());
         }
 
-        response.addObject("searchValue", search);
+        response.addObject("searchValue", cleaner.clean(search));
 
         return response;
     }

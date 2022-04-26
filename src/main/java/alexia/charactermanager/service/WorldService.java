@@ -31,7 +31,11 @@ public class WorldService {
         if (world == null) {
             //New character
             world = new World();
-            world.setName(form.getWorld());
+            if (form.getName().isBlank()) {
+                world.setName("Unnamed");
+            } else {
+                world.setName(form.getName());
+            }
             save(world);
         }
 
@@ -46,7 +50,11 @@ public class WorldService {
             world = new World();
         }
 
-        world.setName(form.getName());
+        if (form.getName().isBlank()) {
+            world.setName("Unnamed");
+        } else {
+            world.setName(form.getName());
+        }
         world.setDesc(form.getDescription());
         world.setMedium(form.getMedium());
 

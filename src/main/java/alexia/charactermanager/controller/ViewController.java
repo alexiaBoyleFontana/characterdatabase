@@ -56,6 +56,7 @@ public class ViewController {
     public ModelAndView characterSubmit (CharacterFormBean form) throws Exception {
         ModelAndView response = new ModelAndView();
 
+        form.clean();
             //Serv can do the create or edit check
         Character character = charServ.submitChar(form);
 
@@ -97,6 +98,7 @@ public class ViewController {
     public ModelAndView worldSubmit (WorldFormBean form) throws Exception {
         ModelAndView response = new ModelAndView();
 
+        form.clean();
         //Serv can do the create or edit check
         World world = worldServ.submitWorld(form);
 

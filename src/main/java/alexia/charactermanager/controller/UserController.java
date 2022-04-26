@@ -31,6 +31,7 @@ public class UserController {
     public ModelAndView registerSubmit(@Valid RegisterFormBean form, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
 
+        form.clean();
         log.info(form.toString());
 
         if (bindingResult.hasErrors()) {

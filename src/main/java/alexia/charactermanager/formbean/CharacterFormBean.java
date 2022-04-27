@@ -17,14 +17,14 @@ public class CharacterFormBean implements FormBean{
 
     private String img;
 
-    @CharacterUnique
+    //@CharacterUnique
     private String name;
 
     private String race;
 
     private String title;
 
-    @WorldUnique
+    //@WorldUnique
     private String world;
 
     private List<String> links;

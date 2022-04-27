@@ -14,7 +14,7 @@ public class WorldFormBean implements FormBean {
 
     private Integer id;
 
-    @WorldUnique
+    //@WorldUnique
     @NotBlank(message = "Worlds must be named.")
     private String name;
 
